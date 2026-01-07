@@ -82,3 +82,9 @@ def get_input_openai():
             }
         ]  # $ Alert[py/prompt-injection]
     )
+
+    assistant = client.beta.assistants.create(
+        name="Test Agent",
+        model="gpt-4.1",
+        instructions="Talks like a " + persona  # $ Alert[py/prompt-injection]
+    )
